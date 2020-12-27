@@ -1,0 +1,7 @@
+{
+    "port": 1234,
+    "max_players": 20,
+    "motd": "Hello from V",
+    "online-mode": false,
+    "view-distance": 20
+}
