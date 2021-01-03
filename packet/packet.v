@@ -3,7 +3,7 @@ module packet
 import net
 import sio
 import uuid
-import level
+import nbt
 
 type PacketData = NoPacketData | PacketInHandshake | PacketInStatusRequest | PacketInStatusPing | PacketOutStatusResponse |PacketOutStatusPong | PacketInLoginStart | PacketInEncryptionResponse | PacketInLoginPluginResponse | PacketOutLoginSuccess |
 					PacketInLegacyServerListPing | PacketPlayOutJoinGame
@@ -207,8 +207,8 @@ pub:
 	gamemode byte
 	previous_gamemode i8 = -1
 	world_identifier []string
-	dimension_codec byte = 0x00
-	dimension level.Dimension 
+	dimension_codec nbt.Node
+	dimension nbt.Node
 	spawned_world string
 	hashed_seed i64
 	max_players int

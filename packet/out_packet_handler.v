@@ -24,8 +24,8 @@ fn write_play_join_game(mut nos &sio.NetOutputStream, data PacketPlayOutJoinGame
 	for identifier in data.world_identifier {
 		nos.write_var_string(identifier)
 	}
-	nos.write_byte(data.dimension_codec)
-	nos.write_int(int(data.dimension))
+	nos.write_bytes(data.dimension_codec.dump_to_bytes())
+	nos.write_bytes(data.dimension.dump_to_bytes())
 	nos.write_var_string(data.spawned_world)
 	nos.write_i64(data.hashed_seed)
 	nos.write_var_int(data.max_players)

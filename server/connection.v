@@ -109,7 +109,8 @@ fn (mut conn Connection) send_start_chunks() {
 			hardcore: false
 			gamemode: 1
 			world_identifier: ['minecraft:world']
-			dimension: level.overworld
+			dimension_codec: level.dimension_codec
+			dimension: level.dimension
 			spawned_world: 'minecraft:world'
 			hashed_seed: 0
 			max_players: conn.server.settings.max_players
